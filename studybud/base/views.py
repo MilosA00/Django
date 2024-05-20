@@ -1,6 +1,21 @@
 from django.shortcuts import render
-def home(request):
-    return render(request, 'home.html')
+from django.http import HttpResponse
+from .models import Question
+from django.template import loader
 
-def room(request):
-    return render(request, 'room.html')
+
+
+def detail(request, question_id):
+    return HttpResponse("You are looking at question %s" % question_id)
+
+def results(request, question_id):
+    response = "You are looking at the result of %s"
+    return HttpResponse(response % question_id)
+
+def vote(request, question_id):
+    return HttpResponse("You are voting on question %s." % question_id)
+
+def index(request):
+    latest_question_list = Question.objects.order_by("-pub_date")[:5]
+    context = {"latest_question_list": latest_question_list}
+    return render(request, "polls/index.html", context)
