@@ -4,7 +4,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>StudyBud</title>
+    <title>index</title>
 </head>
 <body>
         {% if latest_question_list %}
@@ -13,9 +13,9 @@
         <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
 
 </body>
 </html>
