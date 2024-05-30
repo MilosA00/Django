@@ -7,6 +7,8 @@ from django.template import loader
 def detail(request, question_id):
     return HttpResponse("You are looking at question %s" % question_id)
 
+def room(request):
+    return render(request, "room.html")
 
 def results(request, question_id):
     response = "You are looking at the result of %s"
