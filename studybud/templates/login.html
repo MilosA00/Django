@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<style>
+    button {color: black; background-color: lightgray; position: absolute; left: 50%; top: 70%}
+    label {display: block}
+</style>
+<body>
+        {% include "navbar.html" %}
+        {% block content %}
+            <div class="LoginButton">
+                <button type="submit"><h1>Login</h1></button>
+            </div>
+            <div>
+                <label for="username">Username:</label>
+                 <input type="text" id="username" name="username"/>
+        </div>
+
+        <div>
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="password" minlength="8" required />
+        </div>
+
+        {% endblock content %}
+</body>
+</html>

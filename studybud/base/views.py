@@ -10,6 +10,9 @@ def detail(request, question_id):
 def room(request):
     return render(request, "room.html")
 
+def login(request):
+    return render(request, "login.html")
+
 def results(request, question_id):
     response = "You are looking at the result of %s"
     return HttpResponse(response % question_id)
