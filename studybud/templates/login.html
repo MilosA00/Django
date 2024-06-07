@@ -9,21 +9,11 @@
 </head>
 <body>
         {% include "navbar.html" %}
-        {% block content %}
-            <div id="signInDiv">
-            <h1>Sign in</h1>
+           
+            <div >
+                <button type="submit" class="loginButton">Login</button>
             </div>
-            <div class="LoginButton">
-                <button type="submit" id="loginButton"><h1>Login</h1></button>
-            </div>
-            <div>
-                 <input type="text" id="username" name="username" placeholder="Username"/>
-        </div>
+         
 
-        <div id="passwordDiv">
-            <input type="password" id="pass" name="password" minlength="8" required placeholder="Password" />
-        </div>
-
-        {% endblock content %}
 </body>
 </html>
