@@ -1,0 +1,22 @@
+
+.navBarButtons{
+    list-style-type: none;
+    background-color: rgba(140, 138, 138, 0.35);
+    padding:0px;
+    margin-right: 0px;
+    overflow: hidden;
+}
+
+.navBarButtons a{
+    color: #4b4b4b;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.navBarButtons a:hover{
+    background-color: hsla(0, 0%, 10%, 0.31);
+}
+.navBarButtons li{
+    float: left;
+}
