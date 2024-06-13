@@ -1,22 +1,37 @@
 
-.navBarButtons{
+.navBarButtons {
     list-style-type: none;
-    background-color: rgba(140, 138, 138, 0.35);
-    padding:0px;
-    margin-right: 0px;
+    background-color: rgba(140, 138, 138, 0.18);
+    padding: 0px;
+    margin: auto;
     overflow: hidden;
 }
 
-.navBarButtons a{
-    color: #4b4b4b;
+.navBarButtons a {
+    color: rgb(0, 0, 0);
+
     text-decoration: none;
     padding: 15px;
     display: block;
     text-align: center;
 }
-.navBarButtons a:hover{
+
+.navBarButtons a:hover {
     background-color: hsla(0, 0%, 10%, 0.31);
 }
-.navBarButtons li{
+
+.navBarButtons li {
     float: left;
+}
+
+
+a:hover {
+    opacity: 1;
+}
+
+a {
+    color: white;
+    font-size: 30px;
+    opacity: 0.4;
+    -webkit-transition: 0.3s ease-in-out;
 }

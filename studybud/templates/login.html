@@ -8,20 +8,20 @@
     <link rel='stylesheet' type="text/css" href="{% static 'loginStyle.css' %}">
 </head>
 <body>
-        {% include "navbar.html" %}
+{% include "navbar.html" %}
+
+<form class="loginForm">
+    <div class="credentials">
+        <h1>-----Sign In-----</h1>
+        <input type="text" placeholder="Username" class="username">
+        <input type="password" placeholder="Password" class="password">
+    </div>
 
 
-             <div class="Credentials">
-                <div>
-                    <h1>-----Sign In-----</h1>
-                <input type="text" placeholder="Username" class="username">
-                <input type="password" placeholder="Password" class="password">
-                </div>
-            </div>
-
-            <div class="Container">
-                <button type="submit" class="loginButton">Login</button>
-            </div>
+    <div class="container">
+        <button type="submit" class="loginButton">Login</button>
+    </div>
+</form>
 
 
 </body>

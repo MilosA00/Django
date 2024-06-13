@@ -1,38 +1,75 @@
+html {
+    height: 100vh;
+}
 
-.Container{
+
+body {
+    background: url("loginBackground.avif") no-repeat center;
+    background-size: 100% 100%;
+
+}
+
+.container {
     display: flex;
     justify-content: center;
     margin: auto;
     height: 100px;
-    width: 200px;
-    border: 15px solid black;
+    width: 250px;
+
+
 }
 
-.Credentials{
+.credentials {
     display: flex;
     justify-content: center;
     margin: auto;
-    flex-wrap: wrap;
-    align-content: center;
-    border: 10px solid black;
-    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 220px;
     height: 400px;
 }
 
-.username{
-    width: 200px;
-    height: 30px;
+.loginForm {
+    background-color: rgba(185, 125, 11, 0);
+    width: 250px;
+    height: 500px;
+    margin: auto;
 }
-.password{
+
+
+.username {
+    background-color: rgba(14, 12, 3, 0.4);
+    color: white;
     width: 200px;
     height: 30px;
 }
 
+.password {
+    background-color: rgba(14, 12, 3, 0.4);
+    color: white;
+    width: 200px;
+    height: 30px;
+}
 
-.loginButton{
+::placeholder {
+    color: white;
+
+}
+
+.loginButton:hover {
+    opacity: 1;
+
+
+}
+
+.loginButton {
+    opacity: 0.3;
+    font-size: 35px;
     height: 50px;
     width: 200px;
     border-radius: 12px;
+    -webkit-transition: 0.3s ease-in-out;
 }
 
 
