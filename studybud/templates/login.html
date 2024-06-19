@@ -10,16 +10,19 @@
 <body>
 {% include "navbar.html" %}
 
-<form class="loginForm">
+<form class="loginForm" method="post" action="login_request">
     <div class="credentials">
         <h1>-----Sign In-----</h1>
+
         <input type="text" placeholder="Username" class="username">
         <input type="password" placeholder="Password" class="password">
+        <input type="submit" value="Submit" class="loginButton">
     </div>
 
 
     <div class="container">
-        <button type="submit" class="loginButton">Login</button>
+
+{#        <button type="submit" class="loginButton" formmethod="post">Login</button>#}
     </div>
 </form>
 
