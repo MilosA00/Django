@@ -18,23 +18,22 @@ def login_request(request):
     if request.method == "POST":
         user = User.objects.all()
         # user.authenticate(user_name="123", password="123")
-
         for i in range(len(user)):
-            if user[i].user_name == request.get("user_name"):
-                if user[i].password == request.POST['password']:
+            if user[i].user_name == request.POST.get("username"):
+                if user[i].password == request.POST.get('password'):
                     return redirect("home")
 
-        print(user.password)
-        if user is not None:
-            return redirect("home")
-        else:
-            return HttpResponse("Invalid login form")
-        for user in user:
-            print(form.__dict__)
-            print(request.POST.__dict__)
-            if user.user_name == request.POST.get('username', ""):
-                if user.password == request.POST.get('password', ""):
-                    return redirect("home")
+        # print(user.password)
+        # if user is not None:
+        #     return redirect("home")
+        # else:
+        #     return HttpResponse("Invalid login form")
+        # for user in user:
+        #     print(form.__dict__)
+        #     print(request.POST.__dict__)
+        #     if user.user_name == request.POST.get('username', ""):
+        #         if user.password == request.POST.get('password', ""):
+        #             return redirect("home")
 
         # if user.("user_name") == request.user.username:
         #     return redirect("home.html")

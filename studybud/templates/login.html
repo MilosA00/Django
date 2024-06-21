@@ -11,11 +11,12 @@
 {% include "navbar.html" %}
 
 <form class="loginForm" method="post" action="login_request">
+    
     <div class="credentials">
         <h1>-----Sign In-----</h1>
 
-        <input type="text" placeholder="Username" class="username">
-        <input type="password" placeholder="Password" class="password">
+        <input type="text" placeholder="Username" class="username" name="username">
+        <input type="password" placeholder="Password" class="password" name="password">
         <input type="submit" value="Submit" class="loginButton">
     </div>
 
