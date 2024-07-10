@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
 from .forms import UserForm
 from .models import User
 
