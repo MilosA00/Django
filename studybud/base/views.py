@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -44,5 +45,12 @@ def add_user(request):
 
 
 def home(request):
-    users = User.objects.all()
-    return render(request, "home.html", {"users": users})
+    if request.method == "GET":
+        users = User.objects.all()
+        result = []
+        for user in users:
+            u = {"user_name": user.user_name, "password": user.password, "email": user.email}
+            result.append(u)
+        return JsonResponse(result, safe=False)
+
+    return HttpResponse("NOK", status=400)
