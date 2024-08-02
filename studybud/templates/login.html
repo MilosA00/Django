@@ -8,20 +8,27 @@
     <link rel='stylesheet' type="text/css" href="{% static 'loginStyle.css' %}">
 </head>
 
+<script src=”https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <body>
 {% include "navbar.html" %}
 
-{#<form class="loginForm" method="post" action="login_request">#}
+<form class="loginForm" method="post" action="login">
     
-    <form class="credentials" id="loginForm">
+    <div class="credentials">
         <h1>-----Sign In-----</h1>
 
-        <input type="text" placeholder="Username" class="username" id="username" name="username" onfocusout="outOfFocus()">
+        <input type="text" placeholder="Username" class="username" id="username" name="username">
         <input type="password" placeholder="Password" class="password" id="password" name="password">
-        <input type="submit" value="Submit" class="loginButton">
-    </form>
-{#</form>#}
+        <input type="submit" value="Submit" class="loginButton" onclick="fetchTodos()">
+    </div>
+
+
+    <div class="container">
+
+{#        <button type="submit" class="loginButton" formmethod="post">Login</button>#}
+    </div>
+</form>
 
         <script src="{% static 'JS/login_validation.js' %}"></script>
 </body>

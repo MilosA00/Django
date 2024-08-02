@@ -1,29 +1,15 @@
-const username = document.querySelector('#username').value;
-const password = document.getElementById("password").value;
-const form = document.querySelector("#loginForm")
-form.addEventListener("submit", async (e) => {
-    e.preventDefault()
-    await fetchTodos()
-})
-const url = "http://127.0.0.1:8000/home"
+var username = document.getElementById('username')
+var password = document.getElementById("password")
 
-async function fetchTodos() {
-    const request = await fetch("http://127.0.0.1:8000/home")
-    const todos = await request.json()
-    // console.log(todos[0])
-    // console.log(username)
-    // console.log(password)
-    console.log(username)
-    console.log(password)
+var url = "http://127.0.0.1:8000/home"
+
+function login_validation() {
+
 
 }
 
-function outOfFocus() {
-    let usrName = username.value
-    console.log(usrName)
-    if (usrName == null) {
-        console.log("Username out of focus")
-    } else {
-        console.log("Username in focus")
-    }
+async function fetchTodos() {
+    const request = await fetch("http://127.0.0.1:8000/home").then(res => res.json())
+    console.log(request)
+
 }
