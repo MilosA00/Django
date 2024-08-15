@@ -4,9 +4,8 @@ html {
 
 
 body {
-    background: url("loginBackground.avif") no-repeat center;
+    background: url("Wallpaper.jpg") no-repeat center;
     background-size: 100% 100%;
-
 }
 
 /*.container {*/
@@ -17,16 +16,39 @@ body {
 /*    width: 250px;*/
 /*    */
 /*}*/
+.div1, .div2 {
+    position: relative;
+}
+
+.usernameValidation, .passwordValidation {
+    display: none;
+    color: rgba(255, 0, 0, 1);
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(125%);
+    margin: 0;
+
+}
+
+
+.displayMsg {
+    display: flex;
+}
 
 .credentials {
     display: flex;
     justify-content: center;
     margin: auto;
+    margin-top: 20px;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     width: 220px;
     height: 400px;
+    background: rgba(0, 0, 0, 0.1);
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .loginForm {
@@ -39,6 +61,7 @@ body {
 
 .username {
     background-color: rgba(14, 12, 3, 0.4);
+    line-height: 0;
     color: white;
     width: 200px;
     height: 30px;
@@ -46,6 +69,7 @@ body {
 
 .password {
     background-color: rgba(14, 12, 3, 0.4);
+    line-height: 0;
     color: white;
     width: 200px;
     height: 30px;
