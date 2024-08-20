@@ -9,26 +9,26 @@
 </head>
 <body>
 {% include "navbar.html" %}
-
-<form class="sighUpForm" method="post" action="signup ">
     
-    <div class="credentials">
+    <form class="credentials" id="signUpForm">
         <h1>-----Sign Up-----</h1>
-
-        <input type="text" placeholder="Username" class="username" name="user_name">
-        <input type="email" placeholder="Email" class="email" name="email">
-        <input required type="password" placeholder="Password" class="password" name="password">
+        <div class="div1">
+            <input type="text" placeholder="Username" class="username" name="user_name" onfocusout="outOfFocusUsr()">
+            <h5 class="usernameValidation">Username is required</h5>    
+        </div>
+        <div class="div2">
+            <input type="email" placeholder="Email" class="email" name="email" onfocusout="outOfFocusEmail()">
+            <h5 class="emailValidation">Email is required</h5>
+        </div>
+        <div class="div3">
+            <input type="password" placeholder="Password" class="password" name="password" onfocusout="outOfFocusPass()">
+            <h5 class="passwordValidation">Password is required</h5>
+        </div> 
         <input type="submit" value="Submit" class="sighUpButton">
-    </div>
-    {% if is_invalid %}
-        
-        <h1>Invalid Credentials</h1>
-        
-        
-    {% endif %}
-    
-</form>
+    </form>
 
+
+    <script src="{% static 'JS/signup_validation.js' %}"></script>
 
 </body>
 </html>

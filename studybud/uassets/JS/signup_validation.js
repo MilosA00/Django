@@ -1,23 +1,24 @@
-const username = document.querySelector('#username');
-const password = document.getElementById("password");
+const username = document.querySelector(".username")
+const email = document.querySelector(".email")
+const password = document.querySelector(".password")
 
 
-const form = document.querySelector("#loginForm")
+const form = document.querySelector("#signUpForm")
 form.addEventListener("submit", async (e) => {
     e.preventDefault()
-    await loginRequest()
+    await signUpRequest()
 })
-const url = "http://127.0.0.1:8000/home"
 
-async function loginRequest() {
 
+async function signUpRequest() {
 
     const data = new FormData();
-    data.append('username', username.value)
+    data.append('user_name', username.value)
+    data.append('email', email.value)
     data.append('password', password.value)
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/user/login', {
+        const response = await fetch('http://127.0.0.1:8000/user/signup', {
             method: "post",
             body: data
         })
@@ -33,9 +34,6 @@ async function loginRequest() {
 
 }
 
-function isEmpty(str) {
-    return str.length;
-}
 
 function outOfFocusUsr() {
     const usrName = isEmpty(username.value)
@@ -48,8 +46,21 @@ function outOfFocusUsr() {
     } else {
         validationMsg.classList.remove("displayMsg")
     }
+}
 
 
+function isEmpty(str) {
+    return str.length;
+}
+
+function outOfFocusEmail() {
+    const usrEmail = isEmpty(email.value)
+    const passValidationMsg = document.querySelector(".emailValidation")
+    if (usrEmail === 0) {
+        passValidationMsg.classList.add("displayMsg")
+    } else {
+        passValidationMsg.classList.remove("displayMsg")
+    }
 }
 
 function outOfFocusPass() {

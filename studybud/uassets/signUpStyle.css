@@ -4,19 +4,10 @@ html {
 
 
 body {
-    background: url("loginBackground.avif") no-repeat center;
+    background: url("Wallpaper.jpg") no-repeat center;
     background-size: 100% 100%;
 
 }
-
-/*.container {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    margin: auto;*/
-/*    height: 100px;*/
-/*    width: 250px;*/
-/*    */
-/*}*/
 
 .credentials {
     display: flex;
@@ -29,13 +20,26 @@ body {
     height: 400px;
 }
 
-.loginForm {
-    background-color: rgba(185, 125, 11, 0);
-    width: 250px;
-    height: 500px;
-    margin: auto;
+
+.usernameValidation, .passwordValidation, .emailValidation {
+    display: none;
+    color: rgba(255, 0, 0, 1);
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(125%);
+    margin: 0;
+
 }
 
+
+.div1, .div2, .div3 {
+    position: relative;
+}
+
+.displayMsg {
+    display: flex;
+}
 
 .username {
     background-color: rgba(14, 12, 3, 0.4);
@@ -50,6 +54,7 @@ body {
     width: 200px;
     height: 30px;
 }
+
 .email {
     background-color: rgba(14, 12, 3, 0.4);
     color: white;

@@ -27,10 +27,10 @@ def sigh_up(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("login")
+            return JsonResponse({'status': True})
 
         else:
-            return HttpResponse("NOK", status=400)
+            return JsonResponse({'status': False}, status=422)
 
     return render(request, "sign_up.html")
 
