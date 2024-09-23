@@ -1,16 +1,15 @@
 const username = document.querySelector('#username');
 const password = document.getElementById("password");
-
-
+const loginDisable = document.querySelector(".loginButton")
 const form = document.querySelector("#loginForm")
+
+
 form.addEventListener("submit", async (e) => {
     e.preventDefault()
     await loginRequest()
 })
-const url = "http://127.0.0.1:8000/home"
 
 async function loginRequest() {
-
 
     const data = new FormData();
     data.append('username', username.value)
@@ -26,11 +25,9 @@ async function loginRequest() {
         if (parsedResponse.status === true) {
             window.location.replace("http://127.0.0.1:8000/home")
         }
-
     } catch (error) {
         console.error(error)
     }
-
 }
 
 function isEmpty(str) {
@@ -41,15 +38,13 @@ function outOfFocusUsr() {
     const usrName = isEmpty(username.value)
 
     const validationMsg = document.querySelector(".usernameValidation")
-
     if (usrName === 0) {
         validationMsg.classList.add("displayMsg")
-
+        loginDisable.disabled = true;
     } else {
         validationMsg.classList.remove("displayMsg")
+        loginDisable.disabled = false;
     }
-
-
 }
 
 function outOfFocusPass() {
@@ -57,7 +52,9 @@ function outOfFocusPass() {
     const passValidationMsg = document.querySelector(".passwordValidation")
     if (usrPass === 0) {
         passValidationMsg.classList.add("displayMsg")
+        loginDisable.disabled = true;
     } else {
         passValidationMsg.classList.remove("displayMsg")
+        loginDisable.disabled = false;
     }
 }

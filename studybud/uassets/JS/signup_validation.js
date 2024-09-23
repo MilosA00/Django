@@ -1,7 +1,7 @@
 const username = document.querySelector(".username")
 const email = document.querySelector(".email")
 const password = document.querySelector(".password")
-
+const signUpDisable = document.querySelector(".sighUpButton")
 
 const form = document.querySelector("#signUpForm")
 form.addEventListener("submit", async (e) => {
@@ -35,6 +35,10 @@ async function signUpRequest() {
 }
 
 
+function isEmpty(str) {
+    return str.length;
+}
+
 function outOfFocusUsr() {
     const usrName = isEmpty(username.value)
 
@@ -42,15 +46,12 @@ function outOfFocusUsr() {
 
     if (usrName === 0) {
         validationMsg.classList.add("displayMsg")
+        signUpDisable.disabled = true;
 
     } else {
         validationMsg.classList.remove("displayMsg")
+        signUpDisable.disabled = false;
     }
-}
-
-
-function isEmpty(str) {
-    return str.length;
 }
 
 function outOfFocusEmail() {
@@ -58,8 +59,10 @@ function outOfFocusEmail() {
     const passValidationMsg = document.querySelector(".emailValidation")
     if (usrEmail === 0) {
         passValidationMsg.classList.add("displayMsg")
+        signUpDisable.disabled = true;
     } else {
         passValidationMsg.classList.remove("displayMsg")
+        signUpDisable.disabled = false;
     }
 }
 
@@ -68,7 +71,9 @@ function outOfFocusPass() {
     const passValidationMsg = document.querySelector(".passwordValidation")
     if (usrPass === 0) {
         passValidationMsg.classList.add("displayMsg")
+        signUpDisable.disabled = true;
     } else {
         passValidationMsg.classList.remove("displayMsg")
+        signUpDisable.disabled = false;
     }
 }

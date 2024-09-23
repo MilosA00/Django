@@ -69,6 +69,17 @@ TEMPLATES = [
     },
 ]
 
+# Redis cache configuration
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
+}
+CACHE_TTL = 60
+# Use the Redis cache as the default cache
+# CACHES['default'] = CACHES['redis']
+
 WSGI_APPLICATION = 'studybud.wsgi.application'
 
 # Database

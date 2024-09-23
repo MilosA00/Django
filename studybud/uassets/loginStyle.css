@@ -20,6 +20,7 @@ body {
     position: relative;
 }
 
+
 .usernameValidation, .passwordValidation {
     display: none;
     color: rgba(255, 0, 0, 1);
@@ -93,5 +94,3 @@ body {
     border-radius: 12px;
     -webkit-transition: 0.3s ease-in-out;
 }
-
-
