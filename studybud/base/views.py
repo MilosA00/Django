@@ -1,9 +1,9 @@
+from django.core.cache import cache
 from django.http import HttpResponse
 from django.http import JsonResponse
-from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django.core.cache import cache
+
 from .forms import UserForm
 from .models import User
 
@@ -42,21 +42,19 @@ def home(request):
     if request.method == "GET":
         users = User.objects.all()
         result = []
-        for user in users:
-            u = {"user_name": user.user_name, "password": user.password, "email": user.email}
-            result.append(u)
 
-        print("_----------------------------_----")
         subject = cache.get('name')
-        print("_----------------------------_----")
         if not subject:
-            # subject = User.objects.all()
+            for user in users:
+                u = {"user_name": user.user_name, "password": user.password, "email": user.email}
+                result.append(u)
             cache.set('name', result, 5)
             context = {'subject': cache.get('name')}
-            return render(request, "home.html", context)
+
+            return JsonResponse({'status': True, 'data': context})
         else:
             context = {'subject': cache.get('name')}
-            return render(request, "home.html", context)
+            return JsonResponse(context)
 
         # if subject:
         #     return render(request, "home.html", subject)
@@ -77,3 +75,22 @@ def all_user_purge(request):
             return JsonResponse({'status': False}, status=422)
 
     return JsonResponse({'status': False})
+
+
+def random_users(request):
+    try:
+        user_name = "one"
+        password = "two"
+        result = []
+
+        for i in range(100):
+            u = {"user_name": user_name, "password": password, "email": user_name}
+            result.append(u)
+            form = UserForm(u)
+            form.save()
+            user_name += ","
+            password += ","
+
+        return JsonResponse({'status': True}, status=200)
+    except:
+        return JsonResponse({'status': False}, status=500)

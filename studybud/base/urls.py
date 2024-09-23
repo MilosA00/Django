@@ -8,5 +8,6 @@ urlpatterns = [
     path("all_user_purge", views.all_user_purge, name="all_user_purge"),
     path("user/login", views.login, name="login"),
     path("user/signup", views.sigh_up, name="sigh_up"),
+    path("random_users", views.random_users, name="random_users"),
 
 ]
